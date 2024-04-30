@@ -84,6 +84,9 @@ static void ListarProdutos(int indiceListaProdutos, List<Produto> produtos)
 {
     Console.WriteLine("\n:::Produtos no estoque");
 
+    if (produtos.Count() == 0)
+        Console.WriteLine("Nenhum item no estoque!");
+
     foreach (Produto produto in produtos)
     {
         Console.WriteLine(
@@ -122,8 +125,8 @@ static void RemoverDoEstoque(List<Produto> produtos)
     Console.WriteLine("\nInforme a posição do perfume:");
     var posicaoPerfume = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("\nInforme a quantidade de Saída:");
-
     var quantidadeEntrada = Convert.ToInt32(Console.ReadLine());
+
     var produtoEscolhido = produtos[posicaoPerfume - 1];
     produtoEscolhido.QuantidadeEstoque -= quantidadeEntrada;
 }
